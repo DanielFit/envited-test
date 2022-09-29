@@ -1,4 +1,5 @@
 import { time } from 'console';
+import { hostname } from 'os';
 import React, { Component, useState } from 'react';
 
 class CreateEvent extends Component {
@@ -12,7 +13,7 @@ class CreateEvent extends Component {
     };
   
     handleInput = (event: { target: { value: any; }; }) => {
-      this.setState({ EventName: event.target.value });
+      this.setState({ name: event.target.value });
       this.setState({ HostName: event.target.value });
       this.setState({ StartTime: event.target.value });
       this.setState({ EndTime: event.target.value });
@@ -27,6 +28,8 @@ class CreateEvent extends Component {
       console.log(this.state.EndTime);
       console.log(this.state.date);
       console.log(this.state.Location);
+
+    
     };
   
     render() {
@@ -38,13 +41,13 @@ class CreateEvent extends Component {
           <input onChange={this.handleInput} placeholder="Event name" />
           <button onClick={this.logValue}>Enter</button>
 <p></p>
-          <input onChange={this.handleInput} placeholder="Start time" />
+          <input  type = "time" onChange={this.handleInput} placeholder="Start time" />
           <button onClick={this.logValue}>Enter</button>
 <p></p>
-          <input onChange={this.handleInput} placeholder="End time" />
+          <input  type = "time" onChange={this.handleInput} placeholder="End time" />
           <button onClick={this.logValue}>Enter</button>
  <p></p>
-          <input onChange={this.handleInput} placeholder="Date" />
+          <input  type = "date" onChange={this.handleInput} placeholder="Date" />
           <button onClick={this.logValue}>Enter</button>
 <p></p>
           <input onChange={this.handleInput} placeholder="Location" />

@@ -10,7 +10,7 @@ import CreateEvent from './create-event'
 
 const EventPage = () => {
     return <div> 
-    host name {CreateEvent.HostName}
+
     </div>
      }
     

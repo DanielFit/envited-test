@@ -1,7 +1,57 @@
-import React from 'react';
+import { time } from 'console';
+import React, { Component, useState } from 'react';
 
-const CreateEvent = () => {
-    return <h2>Create Your Event</h2>
+class CreateEvent extends Component {
+    state = {
+      EventName: String,
+      HostName: String,
+      StartTime: Number,
+      EndTime: Number,
+      date: Date,
+      Location: String
+    };
+  
+    handleInput = (event: { target: { value: any; }; }) => {
+      this.setState({ EventName: event.target.value });
+      this.setState({ HostName: event.target.value });
+      this.setState({ StartTime: event.target.value });
+      this.setState({ EndTime: event.target.value });
+      this.setState({ date: event.target.value });
+      this.setState({ Location: event.target.value });
+    };
+  
+    logValue = () => {
+      console.log(this.state.EventName);
+      console.log(this.state.HostName);
+      console.log(this.state.StartTime);
+      console.log(this.state.EndTime);
+      console.log(this.state.date);
+      console.log(this.state.Location);
+    };
+  
+    render() {
+      return (
+        <div>
+          <input onChange={this.handleInput} placeholder="Your name" />
+          <button onClick={this.logValue}>Enter</button>
+<p></p>
+          <input onChange={this.handleInput} placeholder="Event name" />
+          <button onClick={this.logValue}>Enter</button>
+<p></p>
+          <input onChange={this.handleInput} placeholder="Start time" />
+          <button onClick={this.logValue}>Enter</button>
+<p></p>
+          <input onChange={this.handleInput} placeholder="End time" />
+          <button onClick={this.logValue}>Enter</button>
+ <p></p>
+          <input onChange={this.handleInput} placeholder="Date" />
+          <button onClick={this.logValue}>Enter</button>
+<p></p>
+          <input onChange={this.handleInput} placeholder="Location" />
+          <button onClick={this.logValue}>Enter</button>
+        </div>
+      );
     }
-    
-    export default CreateEvent
+  }
+
+  export default CreateEvent
